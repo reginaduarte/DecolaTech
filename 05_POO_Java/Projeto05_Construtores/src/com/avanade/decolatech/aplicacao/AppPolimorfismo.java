@@ -2,12 +2,18 @@ package com.avanade.decolatech.aplicacao;
 
 import javax.swing.JOptionPane;
 
-import com.avanade.decolatech.classes.DocumentoCpf;
 import com.avanade.decolatech.classes.Funcionario;
+import com.avanade.decolatech.classes.Pessoa;
 import com.avanade.decolatech.enumeracao.Generos;
 
-public class AppFuncionario {
+public class AppPolimorfismo {
 	public static void main(String[] args) {
+		
+		Pessoa p = new Pessoa();
+		p.setNome("Jose Manoel");
+		p.setIdade(55);
+		p.setGenero(Generos.Masculino);
+		
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome("Mauricio de Souza");
 		funcionario.setIdade(30);
@@ -15,11 +21,11 @@ public class AppFuncionario {
 		funcionario.setCargo("Professor");
 		funcionario.setSalario(2000);
 		
-		DocumentoCpf cpf = new DocumentoCpf();
-		cpf.setNumero("91369138040");
+		Pessoa pessoa = p;
+		JOptionPane.showMessageDialog(null, pessoa.getDados());
 		
-		funcionario.setDocumento(cpf);
+		pessoa = funcionario;
+		JOptionPane.showMessageDialog(null, pessoa.getDados());
 		
-		JOptionPane.showMessageDialog(null, funcionario.getDados());
 	}
 }
