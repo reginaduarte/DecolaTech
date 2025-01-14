@@ -4,25 +4,12 @@ import com.avanade.decolatech.classes.Curso;
 
 public class AppCurso {
 	public static void main(String[] args) {
-		Curso curso1 = new Curso();
-		curso1.setCodigo(100);
-		curso1.setDescricao("Inteligência Artificial");
-		curso1.setCh(100);
-		curso1.setPreco(4000);
-		
-		Curso curso2 = new Curso();
-		curso1.setCodigo(200);
-		curso1.setDescricao("Culinária Básica");
-		curso1.setCh(8);
-		curso1.setPreco(-10);
-		
+		Curso curso1 = new Curso("Inteligência Artificial", 100, 4000);
+		Curso curso2 = new Curso("Culinária Básica", 8, 0);
 		Curso curso3 = curso1;
-		curso2 = null;
 		
-		System.gc();
-		
-		System.out.println(curso1);
-		System.out.println(curso2);
-		System.out.println(curso3);
+		System.out.println(curso1.getDados());
+		System.out.println(curso2.getDados());
+		System.out.println(curso3.getDados());
 	}
 }
