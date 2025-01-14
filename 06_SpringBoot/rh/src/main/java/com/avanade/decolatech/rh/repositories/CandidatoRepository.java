@@ -1,9 +1,8 @@
 package com.avanade.decolatech.rh.repositories;
 
-import org.hibernate.type.descriptor.converter.spi.JpaAttributeConverter;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import com.avanade.decolatech.rh.entities.Candidato;
 
-public interface CandidatoRepository extends JpaAttributeConverter<Candidato, String>{
-
+public interface CandidatoRepository extends JpaRepository<Candidato, String>{
+	
 }

@@ -2,6 +2,8 @@ package com.avanade.decolatech.rh.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,6 +29,7 @@ public class Candidato {
 	@Column(name = "EMAIL")
 	private String email;
 	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "candidato")
 	private List<Inscricao> inscricoes;
 
