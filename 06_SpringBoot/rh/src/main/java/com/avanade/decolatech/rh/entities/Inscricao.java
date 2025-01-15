@@ -1,6 +1,9 @@
 package com.avanade.decolatech.rh.entities;
 
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,14 +25,16 @@ public class Inscricao {
 	@Column(name = "ID")
 	private int id;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARGO")
 	private Cargo cargo;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CPF")
-	
 	private Candidato candidato;
+	
 	@Column(name = "SITUACAO")
 	private int situacao;
 	
