@@ -27,6 +27,15 @@ public class Candidato {
 	@Column(name = "EMAIL")
 	private String email;
 	
+	public Candidato() { }
+	
+	public Candidato(String cpf, String nome, String telefone, String email) {
+		this.setCpf(cpf);
+		this.setNome(nome); 
+		this.setTelefone(telefone);;
+		this.setEmail(email);;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "candidato")
 	private List<Inscricao> inscricoes;
 

@@ -26,6 +26,16 @@ public class Area {
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "area")
 	private List<Cargo> cargos;
+	
+	public Area( ) {
+		
+	}
+	
+	public Area(int id, String descricao) {
+		this.setId(id);
+		this.setDescricao(descricao);
+	}
+	
 
 	public int getId() {
 		return id;

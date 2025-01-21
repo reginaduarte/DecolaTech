@@ -20,4 +20,14 @@ public class CandidatoService {
 	public Candidato incluirCandidato(Candidato candidato) {
 		return candidatoRepository.save(candidato);
 	}
+	
+	// Método para buscar um candidato pelo CPF
+	public Candidato buscarCandidato(String cpf) {
+		Candidato candidato = candidatoRepository.getReferenceById(cpf);
+		return new Candidato(
+				candidato.getCpf(),
+				candidato.getNome(),
+				candidato.getTelefone(),
+				candidato.getEmail());
+	}
 }

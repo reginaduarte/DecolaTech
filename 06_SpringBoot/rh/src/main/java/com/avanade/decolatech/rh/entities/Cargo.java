@@ -36,6 +36,16 @@ public class Cargo {
 	@Column(name = "TP_SALARIO")
 	private int tipoSalario;
 	
+	public Cargo() { }
+	
+	public Cargo(int id, Area area, String descricao, double salario, int tipo) {
+		this.setId(id);
+		this.setArea(area);
+		this.setDescricao(descricao);
+		this.setSalario(salario);
+		this.setTipoSalario(tipo);
+	}
+	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cargo")
 	private List<Inscricao> inscricoes;
 
