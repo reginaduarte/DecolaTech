@@ -1,31 +1,27 @@
 <div class="margem">
-
     <h2 class="text-primary text-center">Novo Candidato</h2>
-
     <form>
         <div class="mb-3">
-            <label class="form-label"> CPF: </label>
+            <label class="form-label">Cpf:</label>
             <input type="text" class="form-control" name="cpf" [(ngModel)]="candidato.cpf" />
             <span>{{candidato.cpf}}</span>
         </div>
-
         <div class="mb-3">
-            <label class="form-label"> NOME: </label>
+            <label class="form-label">Nome:</label>
             <input type="text" class="form-control" name="nome" [(ngModel)]="candidato.nome"/>
         </div>
-
         <div class="mb-3">
-            <label class="form-label"> TELEFONE: </label>
+            <label class="form-label">Telefone:</label>
             <input type="text" class="form-control" name="telefone" [(ngModel)]="candidato.telefone"/>
         </div>
-
         <div class="mb-3">
-            <label class="form-label"> EMAIL: </label>
-            <input type="text" class="form-control" name="email" [(ngModel)]="candidato.email" />
+            <label class="form-label">Email:</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="candidato.email"/>
         </div>
         <div>
             <button class="btn btn-primary" (click)="incluir(candidato)">Incluir</button> | 
             <button class="btn btn-secondary" (click)="fechar()">Fechar</button>
         </div>
+
     </form>
 </div>

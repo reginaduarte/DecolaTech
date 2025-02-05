@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pessoa } from '../../../classes/pessoa';
 import { PessoaService } from '../../../services/pessoa.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-exemplo02',
@@ -9,11 +9,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './exemplo02.component.html',
   styleUrl: './exemplo02.component.css'
 })
-export class Exemplo02Component implements OnInit{
+export class Exemplo02Component implements OnInit {
 
   constructor(private service: PessoaService) { }
-  ngOnInit(): void { // Quando o componente for carregado, chama o método listar;
-      this.listar();
+  
+  ngOnInit(): void {
+    this.listar();
   }
 
   pessoas : Pessoa[] = [];
@@ -22,9 +23,8 @@ export class Exemplo02Component implements OnInit{
     this.pessoas = this.service.listarPessoas();
   }
 
-  nomePessoa!: String;
-  mostrar(nome : String) : void {
+  nomePessoa!: string;
+  mostrar(nome: string) : void {
     this.nomePessoa = nome;
   }
-
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Exemplo01Component } from "../exemplo/exemplo01/exemplo01.component";
-import { Exemplo02Component } from "../exemplo/exemplo02/exemplo02.component";
-import { Exemplo03Component } from "../exemplo/exemplo03/exemplo03.component";
+import { Exemplo01Component } from "./exemplo01/exemplo01.component";
+import { Exemplo02Component } from "./exemplo02/exemplo02.component";
+import { Exemplo03Component } from "./exemplo03/exemplo03.component";
 
 @Component({
   selector: 'app-exemplos',

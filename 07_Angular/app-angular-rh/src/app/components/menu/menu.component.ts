@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-menu',
@@ -8,5 +9,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
+
+  @Input() usuario : string = 'Olá';
+  @Output() novoEvento = new EventEmitter<string>();
+
+  efetuarLogoff() : void {
+    this.novoEvento.emit();
+  }
 
 }

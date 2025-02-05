@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class CandidatosComponent {
 
   constructor(private router: Router) {}
+
   novoCandidato(): void {
     this.router.navigate(['/candidatos/novo']);
   }
-
 }

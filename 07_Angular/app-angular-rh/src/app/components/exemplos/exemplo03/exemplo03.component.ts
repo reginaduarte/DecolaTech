@@ -13,19 +13,19 @@ import { FiltroPipe } from '../../../pipes/filtro.pipe';
 })
 export class Exemplo03Component implements OnInit{
 
-  constructor(private service: PessoaService) {  }
+  constructor(private service: PessoaService) {}
+
   ngOnInit(): void {
-   this.listar();
+    this.listar();
   }
 
   pessoas : Pessoa[] = [];
-  listar() : void {
+  listar(): void {
     this.pessoas = this.service.listarPessoas();
   }
 
-//     filtrar(input: string) : void {
-//     this.listar();
-//     this.pessoas = this.pessoas.filter(p => p.nome.includes);
-//  }
- 
+  // filtrar(input: string) : void {
+  //   this.listar();
+  //   this.pessoas = this.pessoas.filter(p => p.nome.toLowerCase().includes(input.toLowerCase()));
+  // }
 }

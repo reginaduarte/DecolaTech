@@ -10,17 +10,17 @@ import { RouterLink } from '@angular/router';
   templateUrl: './candidatos-lista.component.html',
   styleUrl: './candidatos-lista.component.css'
 })
-export class CandidatosListaComponent implements OnInit{
+export class CandidatosListaComponent implements OnInit {
 
-  constructor(private candidatosService: CandidatosService){}
-  
+  constructor(private candidatosService: CandidatosService) {}
+
   ngOnInit(): void {
     this.candidatosService
-    .getCandidatosApi()
-    .subscribe(resposta => this.candidatos = resposta);
+      .getCandidatosApi()
+      .subscribe({ 
+        next: resposta => this.candidatos = resposta
+      });
   }
 
   candidatos: Candidato[] = [];
-
-
 }

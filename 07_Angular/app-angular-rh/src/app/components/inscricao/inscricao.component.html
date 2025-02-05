@@ -1,0 +1,29 @@
+<div class="margem">
+    <h3 class="text-primary">Inscrições</h3>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Cargo Pretendido:</label>
+            <select class="form-select" name="idCargo" [(ngModel)]="inscricao.idCargo">
+                <option *ngFor="let c of cargos" [value]="c.id">{{c.cargo}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Candidato:</label>
+            <select class="form-select" name="cpf" [(ngModel)]="inscricao.cpf">
+                <option *ngFor="let c of candidatos" [value]="c.cpf">{{c.nome}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Data da inscrição</label>
+            <input type="date" class="form-control" name="dataIscricao" [(ngModel)]="inscricao.dataInscricao" />
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="incluir()">Efetuar Inscrição</button> |
+            <button class="btn btn-default">Voltar para Home</button>
+        </div>
+        <div class="mt-3">
+            <div class="alert alert-success" *ngIf="sucesso">{{sucesso}}</div>
+            <div class="alert alert-danger" *ngIf="erro">{{erro}}</div>
+        </div>
+    </form>
+</div>

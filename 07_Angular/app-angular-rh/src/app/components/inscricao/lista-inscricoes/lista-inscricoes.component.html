@@ -1,0 +1,28 @@
+<h3>Lista de inscrições por candidato</h3>
+<div class="mb-3 mt-3">
+    <a class="btn btn-primary" routerLink="/candidatos">Voltar para a lista de candidatos</a>
+</div>
+
+<div class="alert alert-warning" *ngIf="lista.length == 0">
+    Nenhuma inscrição realizada para este candidato.
+</div>
+
+<table class="table table-hover" *ngIf="lista.length > 0">
+    <thead>
+        <tr>
+            <th>CPF</th>
+            <th>CANDIDATO</th>
+            <th>DATA INSCRIÇÃO</th>
+            <th>CARGO</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of lista">
+            <td>{{c.cpf}}</td>
+            <td>{{c.candidato}}</td>
+            <td>{{c.dataInscricao | date:'dd/MM/yyyy'}}</td>
+            <td>{{c.cargo}}</td>
+        </tr>
+    </tbody>
+</table>

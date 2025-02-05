@@ -8,15 +8,14 @@ export class PessoaService {
 
   constructor() { }
 
-                          // Importação
-  public listarPessoas(): Pessoa[]{
+  public listarPessoas(): Pessoa[] {
     return [
-      { nome: 'Rafael', idade: 23},
-      { nome: 'Joana', idade: 55},
+      { nome: 'Samuel', idade: 22},
+      { nome: 'Ana Paula', idade: 25},
+      { nome: 'Daniela', idade: 33},
       { nome: 'Maria', idade: 40},
-      { nome: 'Tiago', idade: 27}
+      { nome: 'Osvaldo', idade: 45}
+
     ];
-
   }
-
 }

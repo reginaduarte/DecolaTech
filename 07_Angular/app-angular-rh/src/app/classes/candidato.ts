@@ -1,29 +1,28 @@
 export class Candidato {
 
     constructor(
-        public cpf: string = '',
-        public nome: string = '',
-        public telefone: string = '',
-        public email: string = ''
-    ){}
+        public cpf: string = '', 
+        public nome: string = '', 
+        public telefone: string = '', 
+        public email: string = '') {}
 
-    // constructor(){
-    //     this._cpf = '';
-    //     this._nome = '';
-    //     this._email = '';
-    //     this._telefone = '';
+    // constructor() {
+    //     this._cpf='';
+    //     this._nome='';
+    //     this._telefone='';
+    //     this._email='';
     // }
-
-    // private _cpf : string;
+    
+    // _cpf : string;
     // public get cpf() : string {
     //     return this._cpf;
     // }
     // public set cpf(v : string) {
     //     this._cpf = v;
     // }
-
     
-    // private _nome : string;
+    
+    // _nome : string;
     // public get nome() : string {
     //     return this._nome;
     // }
@@ -32,7 +31,7 @@ export class Candidato {
     // }
     
     
-    // private _telefone : string;
+    // _telefone : string;
     // public get telefone() : string {
     //     return this._telefone;
     // }
@@ -41,7 +40,7 @@ export class Candidato {
     // }
     
     
-    // private _email : string;
+    // _email : string;
     // public get email() : string {
     //     return this._email;
     // }
@@ -49,8 +48,7 @@ export class Candidato {
     //     this._email = v;
     // }
     
-    public mostrar() : string{
-        return `CPF: ${this.cpf}\nNOME: ${this.nome}\nTELEFONE: ${this.telefone}\nEMAIL: ${this.email}`;
+    public mostrar() : string {
+        return `CPF: ${this.cpf}\nNome: ${this.nome}\nFone: ${this.telefone}\nEmail: ${this.email}`;
     }
-    
 }

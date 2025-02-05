@@ -7,9 +7,8 @@ import { Pessoa } from '../classes/pessoa';
 export class FiltroPipe implements PipeTransform {
 
   transform(value: Pessoa[], input: string): Pessoa[] {
-   
-    return !input ? value : value.filter(p => p.nome.toLowerCase().includes(input.toLowerCase()));
 
+    return !input ? value : value.filter(p => p.nome.toLowerCase().includes(input.toLowerCase()));
 
   }
 

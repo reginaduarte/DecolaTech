@@ -1,29 +1,33 @@
 import { Routes } from '@angular/router';
-import { StartComponent } from './components/start/start.component';
 import { HomeComponent } from './components/home/home.component';
 import { ExemplosComponent } from './components/exemplos/exemplos.component';
 import { CandidatosComponent } from './components/candidatos/candidatos.component';
 import { Erro404Component } from './components/erros/erro404/erro404.component';
 import { CandidatoNovoComponent } from './components/candidatos/candidato-novo/candidato-novo.component';
-import { CandidatoRemocaoComponent } from './components/candidatos/candidato-remocao/candidato-remocao.component';
 import { CandidatoAlteracaoComponent } from './components/candidatos/candidato-alteracao/candidato-alteracao.component';
+import { CandidatoRemocaoComponent } from './components/candidatos/candidato-remocao/candidato-remocao.component';
+import { InscricaoComponent } from './components/inscricao/inscricao.component';
+import { ListaInscricoesComponent } from './components/inscricao/lista-inscricoes/lista-inscricoes.component';
+import { LoginComponent } from './components/login/login.component';
+import { authGuard } from './guards/auth.guard';
+import { NovoUsuarioComponent } from './components/login/novo-usuario/novo-usuario.component';
 
-
-// Nome do objeto: routes
 export const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'exemplos', component: ExemplosComponent },
 
-    // Cada objeto representa uma rota
-    // Duas propriedades: Path (Se estiver vazio, é a rota padrão do localhost) + component
+    { path: 'candidatos', component: CandidatosComponent },
+    { path: 'candidatos/novo', component: CandidatoNovoComponent, canActivate: [authGuard] },
+    { path: 'candidatos/alteracao/:id', component:CandidatoAlteracaoComponent, canActivate: [authGuard]},
+    { path: 'candidatos/remocao/:id', component: CandidatoRemocaoComponent, canActivate: [authGuard]},
 
-    { path:  '', redirectTo: 'home', pathMatch: 'full'}, // Página inicial
-    { path: 'home', component: HomeComponent},
-    { path: 'exemplos', component: ExemplosComponent},
-    { path: 'candidatos', component: CandidatosComponent}, 
-    { path: 'candidatos/novo', component: CandidatoNovoComponent}, 
-    { path: 'candidatos/alteracao/:id', component: CandidatoAlteracaoComponent}, 
-    { path: 'candidatos/remocao/:id', component: CandidatoRemocaoComponent}, 
+    { path: 'inscricoes', component: InscricaoComponent},
+    { path: 'inscricoes/candidato/:id', component: ListaInscricoesComponent },
+
+    { path: 'login', component: LoginComponent },
+    { path: 'novo/usuario', component: NovoUsuarioComponent},
 
 
-    { path: '**', component: Erro404Component} // Qualquer coisa diferente dos componentes acima é ERRO
-
+    { path: '**' , component: Erro404Component}
 ];

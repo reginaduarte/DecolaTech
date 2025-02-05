@@ -12,15 +12,14 @@ import { CandidatosService } from '../../../services/candidatos.service';
 })
 export class CandidatoNovoComponent {
 
-  constructor(private router : Router,
-    private candidatoService : CandidatosService
-  ){}
+  constructor(
+    private router: Router, 
+    private candidatoService: CandidatosService) {}
 
   candidato: Candidato = new Candidato();
-  
 
   fechar() : void {
-    this.router.navigate(['candidatos'])
+    this.router.navigate(['/candidatos'])
   }
 
   mostrar() : void {
@@ -31,10 +30,10 @@ export class CandidatoNovoComponent {
     this.candidatoService.postCandidatoApi(candidato)
       .subscribe({
         complete: () => this.fechar(),
-        error: (erro: any) => {
+        error: erro => {
           console.error(erro);
           window.alert(erro);
         }
-      })
+      });
   }
 }

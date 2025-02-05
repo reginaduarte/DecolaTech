@@ -7,20 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './exemplo01.component.css'
 })
 export class Exemplo01Component implements OnInit{
+ 
+ ngOnInit(): void {
+   this.gerarNumero();
+ }
 
-ngOnInit(): void {
-  this.gerarNumero();
-}
+  /*
+      Binding Unidirecional
+        Property Binding: classe -> view (propriedade da classe renderizada na view)
+        Event Binding: view -> classe
+  */
+ rnd!: number;
 
-/*
-  Binding Unidirecional (também chamado de Vínculo)
-    Property Binding: classe -> view (propriedade da classe renderizada na view)
-    Event Binding: view -> classe
-*/
-rnd!: number;
-
-gerarNumero() : void {
+ gerarNumero() : void {
   this.rnd = Math.random();
-}
-
+ }
 }
